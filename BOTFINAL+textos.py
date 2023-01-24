@@ -15,8 +15,8 @@ lista_pesquisa = []
 from os import linesep
 
 print (f"{linesep}Seja bem vindo ao Trust Bank.{linesep}")
-nome= str.title(str.strip(input("Qual seu nome? ")))
-email= str.lower(str.strip(input("Nos diga seu email para darmos continuidade: ")))
+nome= str.title(str.strip(input(f"Qual seu nome? {linesep}")))
+email= str.lower(str.strip(input(f"Nos diga seu email para darmos continuidade: {linesep}")))
 
 
 def final (e):
@@ -83,7 +83,8 @@ opção3 = 5
 opção4 = 3
 
 
-while opção >=5 or opção1 ==4 or opção2==4 or opção3 == 4 or opção4==2 :
+while (opção >=5) or (opção1 ==4) or(opção2==4) or (opção3 == 4) or (opção4==2) :
+    print ( )
     print("-" * 99)
     for item in lista0:
         print(item)    
@@ -91,9 +92,9 @@ while opção >=5 or opção1 ==4 or opção2==4 or opção3 == 4 or opção4==2
     opção = int(input(f"{linesep}Selecione a opção desejada: "))
     print(start(opção))
 
-    if opção ==1:
+    if (opção ==1):
         opção1 =5
-        while opção1>4:
+        while (opção1>4):
             print ("-" * 99) 
             for item in range(len(lista1_1)):
                 print(lista1_1[item])
@@ -103,7 +104,7 @@ while opção >=5 or opção1 ==4 or opção2==4 or opção3 == 4 or opção4==2
 
             if (opção1 <=3):
                 opção4 = 3
-                while opção4>2: 
+                while (opção4>2): 
                     print ("-" * 99)
                     for item in range(len(lista_final)):
                         print(lista_final[item])
@@ -135,9 +136,9 @@ while opção >=5 or opção1 ==4 or opção2==4 or opção3 == 4 or opção4==2
             print( )
 
 
-    elif opção == 2:
+    elif (opção == 2):
         opção2 = 5
-        while opção2 >4:
+        while (opção2 >4):
 
             print ("-" * 99) 
             for item in range(len(lista2_1)):
@@ -148,7 +149,7 @@ while opção >=5 or opção1 ==4 or opção2==4 or opção3 == 4 or opção4==2
 
             if (opção2 <=3):
                 opção4 = 3
-                while opção4 >2:
+                while (opção4 >2):
 
                     print ("-" * 99) 
                     for item in range(len(lista_final)):
@@ -157,7 +158,7 @@ while opção >=5 or opção1 ==4 or opção2==4 or opção3 == 4 or opção4==2
 
                     opção4 = int(input(f"{linesep}Selecione a opção desejada: "))
                     print (final(opção4))
-                    if opção4 ==1:
+                    if (opção4 ==1):
                         while True:
                             nota_atendimento = int(input("De 0 a 5, dê uma nota para o nosso atendimento: "))
                             if nota_atendimento >5:
@@ -175,9 +176,9 @@ while opção >=5 or opção1 ==4 or opção2==4 or opção3 == 4 or opção4==2
                 print( )
         
 
-    elif opção == 3:
+    elif (opção == 3):
         opção3 = 5
-        while opção3 >4:
+        while (opção3 >4):
 
 
             print ("-" * 99) 
@@ -188,7 +189,7 @@ while opção >=5 or opção1 ==4 or opção2==4 or opção3 == 4 or opção4==2
             print(meio3(opção3))
             if (opção3 <=3) :
                 opção4 = 3
-                while opção4 >2:
+                while (opção4 >2):
                     print ("-" * 99) 
                     for item in range(len(lista_final)):
                         print(lista_final[item])
@@ -196,7 +197,7 @@ while opção >=5 or opção1 ==4 or opção2==4 or opção3 == 4 or opção4==2
 
                     opção4 = int(input(f"{linesep}Selecione a opção desejada: "))
                     print (final(opção4))
-                    if opção4 ==1:
+                    if (opção4 ==1):
                         while True:
                             nota_atendimento = int(input("De 0 a 5, dê uma nota para o nosso atendimento: "))
                             if nota_atendimento >5:
@@ -214,7 +215,7 @@ while opção >=5 or opção1 ==4 or opção2==4 or opção3 == 4 or opção4==2
         else:
             print( )
     
-    elif opção == 4:
+    elif (opção == 4):
         while True:
             nota_atendimento = int(input("De 0 a 5, dê uma nota para o nosso atendimento: "))
             if nota_atendimento >5:
@@ -225,7 +226,7 @@ while opção >=5 or opção1 ==4 or opção2==4 or opção3 == 4 or opção4==2
                 lista_pesquisa.append(nota_atendimento)
                 break
         
-    elif opção4 ==1:
+    elif (opção4 ==1):
         
         while True:
             nota_atendimento = int(input("De 0 a 5, dê uma nota para o nosso atendimento: "))
