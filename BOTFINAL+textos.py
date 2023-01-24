@@ -242,6 +242,6 @@ while opção >=5 or opção1 ==4 or opção2==4 or opção3 == 4 or opção4==2
         print(" ")
 
 
-print (lista_pesquisa)
+#print (lista_pesquisa)  Linha de comando reservada apenas para verificação se ps appends estão funcionando
 
 print (f"O Trust Bank agradece seu contato,{nome}, e não esqueça, banco de confiança é Trust Bank.{linesep}")
