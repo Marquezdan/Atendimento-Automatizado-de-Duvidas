@@ -10,10 +10,13 @@ lista1_1 = ["1: Conta corrente" , "2: Conta poupança" , "3: Esqueci minha senha
 lista2_1 = ["1: Cancelar cartão" , "2: Gerar cartão virtual" , "3: Solicitar de cartão" , "4: Retornar ao menu anterior"]
 lista3_1 = ["1: Consignado" , "2: Emprestimo com garantia" , "3: Simulação" , "4: Retornar ao menu anterior"]
 lista_final = [ "1: Sair" , "2: retornar ao menu de inicio"]
+lista_pesquisa = []
 
 from os import linesep
 
 print (f"{linesep}Seja bem vindo ao Trust Bank.{linesep}")
+nome= str.title(str.strip(input("Qual seu nome? ")))
+email= str.lower(str.strip(input("Nos diga seu email para darmos continuidade: ")))
 
 
 def final (e):
@@ -29,11 +32,11 @@ def final (e):
 def meio1 (b):
   
     if b == 1:
-        return (f"{linesep}Acesse o link a seguir e siga o passo a passo para criar sua conta corrente: www.trustbank.com.br/site/conta-corrente/{linesep}")
+        return (f"{linesep}{nome},acesse o link a seguir e siga o passo a passo para criar sua conta corrente: www.trustbank.com.br/site/conta-corrente/{linesep}")
     elif b == 2:
-        return (f"{linesep}Acesse o link a seguir e siga o passo a passo para criar sua conta poupança: www.trustbank.com.br/site/conta-poupanca/{linesep}")
+        return (f"{linesep}{nome},acesse o link a seguir e siga o passo a passo para criar sua conta poupança: www.trustbank.com.br/site/conta-poupanca/{linesep}")
     elif b == 3 :
-        return (f"{linesep}Uma mensagem com o passo a passo para recuperar a senha e o código de mudança de senha foi enviado para o seu e-mail.{linesep}")
+        return (f"{linesep}{nome},uma mensagem com o passo a passo para recuperar a senha e o código de mudança de senha foi enviado para o seu e-mail.{linesep}")
     elif b ==4:
         return (" ")
     else:
@@ -41,11 +44,11 @@ def meio1 (b):
 
 def meio2 (c):
     if c == 1:
-        return (f"{linesep}Entre em contato conosco pelo número 0800 070 3636 para cancelar o cartão.{linesep} ")
+        return (f"{linesep}{nome},entre em contato conosco pelo número 0800 070 3636 para cancelar o cartão.{linesep} ")
     elif c == 2:
-        return (f"{linesep}Baixe o nosso aplicativo https://play.google.com/store/apps/trustbank e acessa a sua conta, logo depois, selecione gerar cartão virtual{linesep}")
+        return (f"{linesep}{nome},baixe o nosso aplicativo https://play.google.com/store/apps/trustbank e acessa a sua conta, logo depois, selecione gerar cartão virtual{linesep}")
     elif c == 3 :
-        return (f"{linesep}Seu pedido foi registrado na nossa base de dados, enviaremos um email para comprovar a solicitação{linesep}")
+        return (f"{linesep}Seu pedido foi registrado na nossa base de dados,{nome}, enviamos um email para comprovar a solicitação.{linesep}")
     elif c ==4:
         return(" ")
     else:
@@ -53,11 +56,11 @@ def meio2 (c):
 
 def meio3 (d):
     if d == 1:
-        return (f"{linesep}O empréstimo consignado é aquele tipo de empréstimo que você solicita e passa a ter o valor das parcelas cobrado direto na folha de pagamento, para mais informações acesse: www.trustbank.com.br/site/emprestimo-consignado/{linesep} ")
+        return (f"{linesep}{nome},o empréstimo consignado é aquele tipo de empréstimo que você solicita e passa a ter o valor das parcelas cobrado direto na folha de pagamento, para mais informações acesse: www.trustbank.com.br/site/emprestimo-consignado/{linesep} ")
     elif d == 2:
-        return (f"{linesep}O crédito com garantia é uma modalidade de empréstimo na qual o cliente oferece um bem à instituição para, assim, tomar o crédito. Por oferecer um bem como garantia de pagamento do empréstimo, a transação é considerada de menor risco, para mais informações acesse: www.trustbank.com.br/site/emprestimo-com-garantia/{linesep}")
+        return (f"{linesep}{nome},o crédito com garantia é uma modalidade de empréstimo na qual o cliente oferece um bem à instituição para, assim, tomar o crédito. Por oferecer um bem como garantia de pagamento do empréstimo, a transação é considerada de menor risco, para mais informações acesse: www.trustbank.com.br/site/emprestimo-com-garantia/{linesep}")
     elif d == 3 :
-        return (f"{linesep}Para fazer uma simulação de emprestimo acesse a opção simulação no aplicativo ou no site: www.trustbank.com.br/site/simular-emprestimo/{linesep}")
+        return (f"{linesep}{nome}, para fazer uma simulação de emprestimo acesse a opção simulação no aplicativo ou no site: www.trustbank.com.br/site/simular-emprestimo/{linesep}")
     elif d ==4:
         return (" ")
     else:
@@ -109,7 +112,16 @@ while opção >=5 or opção1 ==4 or opção2==4 or opção3 == 4 or opção4==2
                     opção4 = int(input(f"{linesep}Selecione a opção desejada: "))
                     print (final(opção4))
                     if opção4 ==1:
-                        break
+                        while True:
+                            nota_atendimento = int(input("De 0 a 5, dê uma nota para o nosso atendimento: "))
+                            if nota_atendimento >5:
+                                print (f"{linesep}Por favor, digite uma nota válida de 0 a 5{linesep}")
+                            else:
+                                lista_pesquisa.append(nome)
+                                lista_pesquisa.append(email)
+                                lista_pesquisa.append(nota_atendimento)
+                                break
+                        
                 
                     else:
                         print( )
@@ -146,7 +158,16 @@ while opção >=5 or opção1 ==4 or opção2==4 or opção3 == 4 or opção4==2
                     opção4 = int(input(f"{linesep}Selecione a opção desejada: "))
                     print (final(opção4))
                     if opção4 ==1:
-                        break
+                        while True:
+                            nota_atendimento = int(input("De 0 a 5, dê uma nota para o nosso atendimento: "))
+                            if nota_atendimento >5:
+                                print (f"{linesep}Por favor, digite uma nota válida de 0 a 5{linesep}")
+                            else:
+                                lista_pesquisa.append(nome)
+                                lista_pesquisa.append(email)
+                                lista_pesquisa.append(nota_atendimento)
+                                break
+                        
                     else:
                         print ( )
             
@@ -176,7 +197,16 @@ while opção >=5 or opção1 ==4 or opção2==4 or opção3 == 4 or opção4==2
                     opção4 = int(input(f"{linesep}Selecione a opção desejada: "))
                     print (final(opção4))
                     if opção4 ==1:
-                        break
+                        while True:
+                            nota_atendimento = int(input("De 0 a 5, dê uma nota para o nosso atendimento: "))
+                            if nota_atendimento >5:
+                                print (f"{license}Por favor, digite uma nota válida de 0 a 5{linesep}")
+                            else:
+                                lista_pesquisa.append(nome)
+                                lista_pesquisa.append(email)
+                                lista_pesquisa.append(nota_atendimento)
+                                break
+                        
                         
                     else:
                         print( )
@@ -185,12 +215,33 @@ while opção >=5 or opção1 ==4 or opção2==4 or opção3 == 4 or opção4==2
             print( )
     
     elif opção == 4:
-        break
+        while True:
+            nota_atendimento = int(input("De 0 a 5, dê uma nota para o nosso atendimento: "))
+            if nota_atendimento >5:
+                print (f"{linesep}Por favor, digite uma nota válida de 0 a 5{linesep}")
+            else:
+                lista_pesquisa.append(nome)
+                lista_pesquisa.append(email)
+                lista_pesquisa.append(nota_atendimento)
+                break
+        
     elif opção4 ==1:
-        break
+        
+        while True:
+            nota_atendimento = int(input("De 0 a 5, dê uma nota para o nosso atendimento: "))
+            if nota_atendimento >5:
+                print (f"{linesep}Por favor, digite uma nota válida de 0 a 5{linesep}")
+            else:
+                lista_pesquisa.append(nome)
+                lista_pesquisa.append(email)
+                lista_pesquisa.append(nota_atendimento)
+                break
+           
 
     else:
         print(" ")
 
-print (f"O Trust Bank agradece seu contato e não esqueça, banco de confiança é Trust Bank.{linesep}")
-        
+
+print (lista_pesquisa)
+
+print (f"O Trust Bank agradece seu contato,{nome}, e não esqueça, banco de confiança é Trust Bank.{linesep}")
