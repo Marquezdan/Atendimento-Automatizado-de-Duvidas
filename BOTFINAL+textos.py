@@ -226,17 +226,7 @@ while (opção >=5) or (opção1 ==4) or(opção2==4) or (opção3 == 4) or (op�
                 lista_pesquisa.append(nota_atendimento)
                 break
         
-    elif (opção4 ==1):
-        
-        while True:
-            nota_atendimento = int(input("De 0 a 5, dê uma nota para o nosso atendimento: "))
-            if nota_atendimento >5:
-                print (f"{linesep}Por favor, digite uma nota válida de 0 a 5{linesep}")
-            else:
-                lista_pesquisa.append(nome)
-                lista_pesquisa.append(email)
-                lista_pesquisa.append(nota_atendimento)
-                break
+    
            
 
     else:
